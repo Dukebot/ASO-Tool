@@ -20,10 +20,3 @@ head_text = soup.head.get_text()
 body_text = soup.body.get_text()
 
 print(soup.body)
-
-f = open(output_path, "w+")
-f.write(body_text)
-f.close()
-
-#Apps = soup.find_all("div", class_="WsMG1c nnK0zc")
-#for app in Apps: print(app.text)
