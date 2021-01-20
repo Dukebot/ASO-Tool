@@ -1,0 +1,15 @@
+Apple Knight is a modern action platformer with precise touch controls, fluid movement, and smooth animation. Explore vast levels filled with secrets, quests and loot. Defeat tough bosses. Fight your way through hordes of evil wizards, knights, and creatures - or activate traps to take them out from a safe distance!
+
+Features:
+- 40 levels: 4 worlds with 10 levels. 4 bosses.
+- New Game Mode: Endless Adventure. Play through endless random levels and get your high score on the leaderboard.
+- Customize character skins, weapons and abilities.
+- Pets!
+- 2 secret areas in every level.
+- 6 customizable touchscreen control layouts.
+- Gamepad support.
+- Keyboard support on Chromebooks. Supports Samsung DeX.
+- Cloud save support.
+- Achievements and Leaderboards.
+
+Made with lots of love and care!

@@ -1,0 +1,30 @@
+Results for app ---> com.waybefore.fastlikeafox
+
+One word results
+
+3.19% - fox
+2.66% - fast
+2.13% - control
+1.60% - through
+1.60% - tapping
+1.60% - score
+1.60% - like
+1.60% - have
+1.60% - challenging
+1.60% - best
+
+Two words results
+
+1.60% - like fox
+1.60% - fast like
+1.07% - get best
+1.07% - emeralds diamonds
+1.07% - coins emeralds
+1.07% - challenging worlds
+1.07% - best score
+
+Three words results
+
+1.61% - fast like fox
+1.08% - get best score
+1.08% - coins emeralds diamonds
