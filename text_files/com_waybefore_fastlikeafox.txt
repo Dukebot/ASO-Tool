@@ -2,39 +2,309 @@ Results for app ---> com.waybefore.fastlikeafox
 
 One word results
 
-3.19% - fox
-2.66% - fast
-2.13% - control
-1.60% - through
-1.60% - tapping
-1.60% - score
-1.60% - like
-1.60% - have
-1.60% - challenging
-1.60% - best
+3.26% - fox
+2.72% - fast
+2.17% - control
+1.63% - through
+1.63% - tapping
+1.63% - score
+1.63% - like
+1.63% - have
+1.63% - challenging
+1.63% - best
+1.09% - –
+1.09% - worlds
+1.09% - way
+1.09% - unlock
+1.09% - tap
+1.09% - run
+1.09% - play
+1.09% - learn
+1.09% - get
+1.09% - fun
+1.09% - emeralds
+1.09% - diamonds
+1.09% - device
+1.09% - coins
+1.09% - be
+1.09% - as
+0.54% - waybefore
+0.54% - vector
+0.54% - value
+0.54% - valleys
+0.54% - uses
+0.54% - upbeat
+0.54% - unique
+0.54% - turn
+0.54% - try
+0.54% - tribe
+0.54% - treasures
+0.54% - tops
+0.54% - top
+0.54% - time
+0.54% - those
+0.54% - them
+0.54% - their
+0.54% - that
+0.54% - temple
+0.54% - technique
+0.54% - tablet
+0.54% - subways
+0.54% - stolen
+0.54% - spots
+0.54% - special
+0.54% - soundtrack
+0.54% - snow-covered
+0.54% - skill
+0.54% - share
+0.54% - sensors
+0.54% - secret
+0.54% - screenshot
+0.54% - rush
+0.54% - rightful
+0.54% - return
+0.54% - retro
+0.54% - replay
+0.54% - remember
+0.54% - reflexes
+0.54% - records
+0.54% - race
+0.54% - properly
+0.54% - precision
+0.54% - power
+0.54% - playing
+0.54% - playability
+0.54% - platformers
+0.54% - platformer
+0.54% - owners
+0.54% - other
+0.54% - or
+0.54% - one
+0.54% - now
+0.54% - note
+0.54% - mysterious
+0.54% - movement
+0.54% - mountain
+0.54% - most
+0.54% - minions
+0.54% - may
+0.54% - master
+0.54% - ltd
+0.54% - lots
+0.54% - leaderboard
+0.54% - internal
+0.54% - inspired
+0.54% - innovative
+0.54% - highways
+0.54% - hard
+0.54% - graphics
+0.54% - golden
+0.54% - go
+0.54% - geometry
+0.54% - games
 
 Two words results
 
-1.60% - like fox
-1.60% - fast like
-1.07% - get best
-1.07% - emeralds diamonds
-1.07% - coins emeralds
-1.07% - challenging worlds
-1.07% - best score
-0.53% - – easy
-0.53% - – be
-0.53% - worlds upbeat
+1.64% - like fox
+1.64% - fast like
+1.09% - get best
+1.09% - emeralds diamonds
+1.09% - coins emeralds
+1.09% - challenging worlds
+1.09% - best score
+0.55% - – easy
+0.55% - – be
+0.55% - worlds upbeat
+0.55% - worlds rush
+0.55% - waybefore ltd
+0.55% - way through
+0.55% - way around
+0.55% - vector based
+0.55% - value unlock
+0.55% - valleys mountain
+0.55% - uses device’s
+0.55% - upbeat soundtrack
+0.55% - unlock secret
+0.55% - unlock everything
+0.55% - unique tap
+0.55% - turn device
+0.55% - try tap
+0.55% - tribe have
+0.55% - treasures golden
+0.55% - tops fiery
+0.55% - top leaderboard
+0.55% - time records
+0.55% - through exciting
+0.55% - through cloud
+0.55% - through challenging
+0.55% - those have
+0.55% - them their
+0.55% - their rightful
+0.55% - that fox
+0.55% - temple snow-covered
+0.55% - technique have
+0.55% - tapping technique
+0.55% - tapping control
+0.55% - tapping back
+0.55% - tap different
+0.55% - tap control
+0.55% - tablet devices
+0.55% - subways city
+0.55% - stolen mysterious
+0.55% - spots or
+0.55% - special power
+0.55% - soundtrack cool
+0.55% - snow-covered valleys
+0.55% - skill reflexes
+0.55% - share score
+0.55% - sensors detect
+0.55% - secret character
+0.55% - screenshot friends
+0.55% - score those
+0.55% - score screenshot
+0.55% - score race
+0.55% - rush way
+0.55% - run unlock
+0.55% - run properly
+0.55% - rightful owners
+0.55% - return them
+0.55% - retro console
+0.55% - replay value
+0.55% - remember learn
+0.55% - reflexes beat
+0.55% - records get
+0.55% - race top
+0.55% - properly try
+0.55% - precision treasures
+0.55% - power remember
+0.55% - playing collect
+0.55% - playability features
+0.55% - play now
+0.55% - play hard
+0.55% - platformers ever
+0.55% - platformer lots
+0.55% - owners control
+0.55% - other way
+0.55% - or turn
+0.55% - one most
+0.55% - now free
+0.55% - note feel
+0.55% - mysterious minions
+0.55% - movement learn
+0.55% - mountain tops
+0.55% - most fun
+0.55% - minions are
+0.55% - may affect
+0.55% - master fun
+0.55% - lots replay
+0.55% - learn tapping
+0.55% - learn control
+0.55% - leaderboard fast
+0.55% - internal sensors
+0.55% - inspired retro
+0.55% - innovative tapping
+0.55% - highways await
+0.55% - have skill
 
 Three words results
 
-1.61% - fast like fox
-1.08% - get best score
-1.08% - coins emeralds diamonds
-0.54% - – easy play
-0.54% - – be as
-0.54% - worlds upbeat soundtrack
-0.54% - worlds rush way
-0.54% - who have skill
-0.54% - who get best
-0.54% - way through cloud
+1.65% - fast like fox
+1.10% - get best score
+1.10% - coins emeralds diamonds
+0.55% - – easy play
+0.55% - – be as
+0.55% - worlds upbeat soundtrack
+0.55% - worlds rush way
+0.55% - way through cloud
+0.55% - way around example
+0.55% - vector based graphics
+0.55% - value unlock everything
+0.55% - valleys mountain tops
+0.55% - uses device’s internal
+0.55% - upbeat soundtrack cool
+0.55% - unlock secret character
+0.55% - unlock everything playing
+0.55% - unique tap control
+0.55% - turn device other
+0.55% - try tap different
+0.55% - tribe have been
+0.55% - treasures golden fox
+0.55% - tops fiery caves
+0.55% - top leaderboard fast
+0.55% - time records get
+0.55% - through exciting challenging
+0.55% - through cloud temple
+0.55% - through challenging worlds
+0.55% - those have skill
+0.55% - them their rightful
+0.55% - their rightful owners
+0.55% - that fox does
+0.55% - temple snow-covered valleys
+0.55% - technique have best
+0.55% - tapping technique have
+0.55% - tapping control –
+0.55% - tapping back device
+0.55% - tap different spots
+0.55% - tap control play
+0.55% - tablet devices cases
+0.55% - subways city highways
+0.55% - stolen mysterious minions
+0.55% - spots or turn
+0.55% - special power remember
+0.55% - soundtrack cool geometry
+0.55% - snow-covered valleys mountain
+0.55% - skill reflexes beat
+0.55% - share score screenshot
+0.55% - sensors detect movement
+0.55% - secret character special
+0.55% - screenshot friends get
+0.55% - score those have
+0.55% - score screenshot friends
+0.55% - score race top
+0.55% - rush way through
+0.55% - run unlock secret
+0.55% - run properly try
+0.55% - rightful owners control
+0.55% - return them their
+0.55% - retro console games
+0.55% - replay value unlock
+0.55% - remember learn control
+0.55% - reflexes beat challenging
+0.55% - records get best
+0.55% - race top leaderboard
+0.55% - properly try tap
+0.55% - precision treasures golden
+0.55% - power remember learn
+0.55% - playing collect coins
+0.55% - playability features innovative
+0.55% - play now free
+0.55% - play hard master
+0.55% - platformers ever created
+0.55% - platformer lots replay
+0.55% - owners control fox
+0.55% - other way around
+0.55% - or turn device
+0.55% - one most fun
+0.55% - now free fast
+0.55% - note feel that
+0.55% - mysterious minions are
+0.55% - movement learn tapping
+0.55% - mountain tops fiery
+0.55% - most fun fastest
+0.55% - minions are chosen
+0.55% - may affect playability
+0.55% - master fun fast
+0.55% - lots replay value
+0.55% - like fox uses
+0.55% - like fox note
+0.55% - like fox developed
+0.55% - learn tapping technique
+0.55% - learn control fingers…
+0.55% - leaderboard fast like
+0.55% - internal sensors detect
+0.55% - inspired retro console
+0.55% - innovative tapping control
+0.55% - highways await find
+0.55% - have skill reflexes
+0.55% - have best precision
+0.55% - have been stolen
