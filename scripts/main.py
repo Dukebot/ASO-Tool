@@ -1,7 +1,7 @@
 #Allows us to retrieve the app data from the googple play store
 from PlayStoreScraper import get_app_details
 #Helper functions to process text and create files
-from Helper import reformat_text, create_file_utf8
+from Helper import reformat_text, create_file_utf8, create_csv
 #Function to analyze the key density of a given text
 from KeywordDensityChecker import keydensity
 
@@ -22,35 +22,20 @@ app_ids = [
     "com.red.ball.ballgames.bounceball.redball5", #Bounce Ball 5 - Jump Ball Hero Adventure
 ]
 
+
 #Words that we will filter as we are not interested in them
 words_to_ignore = ["de", "en", "y", "el", "la", "no" , "a", "para", "tu", "que", "pero", "más", "esta", "es", "un", "una", "mã¡s","the", "in", "to", "of", "and", "than", "o", "more", "mas", "los", "del", "con", "you", "your", "is", "while", "for", "with", "you're", "yourself", "but", "will", "on", "-", "by", "at", "an", "all", "who", "if", "not", "his", "himself", "he", "as", "let's", "it's", "we", "are", "it", "can", "can't", "be", "this", "it"]
-
 words_to_ignore = []
 
-max_results = 100
+
+def main():
+    analyze_apps()
 
 
-#Calculates the keyword density of a given text
-def calculate_keyword_density(text):
-    text_formatted = reformat_text(text)
-    
-    one_word_result = keydensity(text_formatted, 1, words_to_ignore)
-    two_word_result = keydensity(text_formatted, 2, words_to_ignore)
-    three_word_result = keydensity(text_formatted, 3, words_to_ignore)
-
-    result = "\n\nOne word results\n"
-    for res in one_word_result[:max_results]:
-        result += "\n" + res
-    
-    result += "\n\nTwo words results\n"
-    for res in two_word_result[:max_results]:
-        result += "\n" + res
-    
-    result += "\n\nThree words results\n"
-    for res in three_word_result[:max_results]:
-        result += "\n" + res
-    
-    return result
+#Analyzes and array of apps ids and creates a single file per app
+def analyze_apps():
+    for app_id in app_ids:
+        analyze_app(app_id)
 
 
 #Analyzes the keyword density of a given app id (package name)
@@ -59,27 +44,46 @@ def analyze_app(app_id):
     title = app_details["title"]
     description = app_details["description"]
     
-    result = "Title ---> " + title
-    result += "\n\nDescription ---> " + description
-    result += calculate_keyword_density(title + " " + description)
+    all_word_results = calculate_keyword_density(title + " " + description, words_to_ignore)
+    one_word_result = all_word_results[0]
+    two_word_result = all_word_results[1]
+    three_word_result = all_word_results[2]
 
-    create_file_utf8(result, "text_files/" + reformat_text(title) + ".txt")
+    text_result = create_result_text(title, description, one_word_result, two_word_result, three_word_result)
+    csv_result = zip(one_word_result, two_word_result, three_word_result)
 
-#Analyzes and array of apps ids and creates a single file per app
-def analyze_apps():
-    for app_id in app_ids:
-        analyze_app(app_id)
-
-
-#Merges the texts of all apps and gives the result in one single file
-def analyze_all_in_one_go():
-    all_text = ""
-    for app_id in app_ids:
-        app_details = get_app_details(app_id)
-        all_text += app_details["title"] + " " + app_details["description"]
-    result = calculate_keyword_density(all_text)
-    create_file_utf8(result)
+    create_file_utf8(text_result, "out/text/" + reformat_text(title) + ".txt")
+    create_csv(csv_result, 'out/csv/' + reformat_text(title) + ".csv")
 
 
-#analyze_all_in_one_go()
-analyze_apps()
+#Calculates the keyword density of a given text
+def calculate_keyword_density(text, words_to_ignore):
+    text_formatted = reformat_text(text)
+    
+    one_word_result = keydensity(text_formatted, 1, words_to_ignore)
+    two_word_result = keydensity(text_formatted, 2, words_to_ignore)
+    three_word_result = keydensity(text_formatted, 3, words_to_ignore)
+
+    return [one_word_result, two_word_result, three_word_result]
+
+
+def create_result_text(app_title, app_description, one_word_result, two_word_result, three_word_result):
+    result = "Title ---> " + app_title
+    result += "\n\nDescription ---> " + app_description
+    
+    result += "\n\nOne word results\n"
+    for res in one_word_result:
+        result += "\n" + res
+    
+    result += "\n\nTwo words results\n"
+    for res in two_word_result:
+        result += "\n" + res
+    
+    result += "\n\nThree words results\n"
+    for res in three_word_result:
+        result += "\n" + res
+    
+    return result
+
+
+main()

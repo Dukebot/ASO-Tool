@@ -1,20 +1,26 @@
-import json
 import sys
 import re
+import json
+import csv
 
-def create_json_file(json_string, json_file_path = 'json/result.json'):
+def create_json_file(json_string, json_file_path = 'out/json/result.json'):
     with open(json_file_path, 'w') as fp: 
         json.dump(json_string, fp, indent=4)
 
-def create_file(text, file_path = 'text_files/result.txt'):
+def create_file(text, file_path = 'out/text/result.txt'):
 	file = open(file_path,"w+")
 	file.write(text)
 	file.close()
 
-def create_file_utf8(text, file_path = 'text_files/result.txt'):
+def create_file_utf8(text, file_path = 'out/text/result.txt'):
 	with open(file_path, "w+", encoding="utf-8") as file:
 		file.write(text)
 		file.close()
+
+def create_csv(data, excel_path = 'out/csv/result.csv'):
+	with open(excel_path, 'w') as csv_file:
+		csv_writer = csv.writer(csv_file, dialect='excel')
+		csv_writer.writerows(data)
 
 def read_text_from_file(file_path):
 	file_text = open(file_path).read() # Read the text from the file

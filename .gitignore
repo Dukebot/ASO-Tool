@@ -1,6 +1,5 @@
 #Custom Ignores
-text_files/
-json/
+out/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
