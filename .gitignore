@@ -1,3 +1,7 @@
+#Custom Ignores
+text_files/
+json/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

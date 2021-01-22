@@ -1,9 +1,3 @@
-#Words that we will filter as we are not interested in them
-words_to_ignore = ["de", "en", "y", "el", "la", "no" , "a", "para", "tu", "que", "pero", "más", "esta", "es", "un", "una", "mã¡s","the", "in", "to", "of", "and", "than", "o", "more", "mas", "los", "del", "con", "you", "your", "is", "while", "for", "with", "you're", "yourself", "but", "will", "on", "-", "by", "at", "an", "all", "who", "if", "not", "his", "himself", "he", "as", "let's", "it's", "we", "are", "it", "can", "can't", "be", "this"]
-
-words_to_ignore = []
-
-
 #Return the list of words of the given text filtering the words in the list providced
 def get_words_list(text, words_to_filer):
 	all_words = text.split(' ') # Get the words into a list
@@ -71,7 +65,7 @@ def three_words(word_list):
 
 # The main function
 # Words to ignore it's a list of strings
-def keydensity(text, num_words = 1):
+def keydensity(text, num_words = 1, words_to_ignore = []):
 	word_list = get_words_list(text, words_to_ignore)
 	
 	result = []

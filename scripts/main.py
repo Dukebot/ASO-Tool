@@ -1,7 +1,12 @@
+#Allows us to retrieve the app data from the googple play store
 from PlayStoreScraper import get_app_details
+#Helper functions to process text and create files
 from Helper import reformat_text, create_file_utf8
+#Function to analyze the key density of a given text
 from KeywordDensityChecker import keydensity
 
+
+#List of application ID's we want to analyze
 app_ids = [
     "online.limitless.appleknight.free", #Apple Knight: Action Platformer
     "com.waybefore.fastlikeafox", #Fast like a Fox
@@ -17,48 +22,64 @@ app_ids = [
     "com.red.ball.ballgames.bounceball.redball5", #Bounce Ball 5 - Jump Ball Hero Adventure
 ]
 
+#Words that we will filter as we are not interested in them
+words_to_ignore = ["de", "en", "y", "el", "la", "no" , "a", "para", "tu", "que", "pero", "más", "esta", "es", "un", "una", "mã¡s","the", "in", "to", "of", "and", "than", "o", "more", "mas", "los", "del", "con", "you", "your", "is", "while", "for", "with", "you're", "yourself", "but", "will", "on", "-", "by", "at", "an", "all", "who", "if", "not", "his", "himself", "he", "as", "let's", "it's", "we", "are", "it", "can", "can't", "be", "this", "it"]
 
-def calculate_keyword_density(text, max_results):
+words_to_ignore = []
+
+max_results = 100
+
+
+#Calculates the keyword density of a given text
+def calculate_keyword_density(text):
     text_formatted = reformat_text(text)
     
-    one_word_result = keydensity(text_formatted, 1)
-    two_word_result = keydensity(text_formatted, 2)
-    three_word_result = keydensity(text_formatted, 3)
+    one_word_result = keydensity(text_formatted, 1, words_to_ignore)
+    two_word_result = keydensity(text_formatted, 2, words_to_ignore)
+    three_word_result = keydensity(text_formatted, 3, words_to_ignore)
 
     result = "\n\nOne word results\n"
     for res in one_word_result[:max_results]:
         result += "\n" + res
+    
     result += "\n\nTwo words results\n"
     for res in two_word_result[:max_results]:
         result += "\n" + res
+    
     result += "\n\nThree words results\n"
     for res in three_word_result[:max_results]:
         result += "\n" + res
+    
     return result
 
 
-def analyze_app(app_id, max_results = 100):
+#Analyzes the keyword density of a given app id (package name)
+def analyze_app(app_id):
     app_details = get_app_details(app_id)
+    title = app_details["title"]
+    description = app_details["description"]
     
-    result = "Title ---> " + app_details["title"]
-    result += "\n\nDescription ---> " + app_details["description"]
-    result += calculate_keyword_density(app_details["description"], max_results)
-    
-    create_file_utf8(result, "text_files/" + app_id.replace(".", "_") + ".txt")
+    result = "Title ---> " + title
+    result += "\n\nDescription ---> " + description
+    result += calculate_keyword_density(title + " " + description)
 
+    create_file_utf8(result, "text_files/" + reformat_text(title) + ".txt")
 
-def analyze_apps(app_ids):
+#Analyzes and array of apps ids and creates a single file per app
+def analyze_apps():
     for app_id in app_ids:
         analyze_app(app_id)
 
 
-def analyze_all_in_one_go(app_ids):
+#Merges the texts of all apps and gives the result in one single file
+def analyze_all_in_one_go():
     all_text = ""
     for app_id in app_ids:
         app_details = get_app_details(app_id)
         all_text += app_details["title"] + " " + app_details["description"]
-    result = calculate_keyword_density(all_text, 100)
+    result = calculate_keyword_density(all_text)
     create_file_utf8(result)
 
 
-analyze_all_in_one_go(app_ids)
+#analyze_all_in_one_go()
+analyze_apps()
