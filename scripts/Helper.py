@@ -6,12 +6,12 @@ def create_json_file(json_string, json_file_path = 'json/result.json'):
     with open(json_file_path, 'w') as fp: 
         json.dump(json_string, fp, indent=4)
 
-def create_file_old(text, file_path = 'text_files/result.txt'):
+def create_file(text, file_path = 'text_files/result.txt'):
 	file = open(file_path,"w+")
 	file.write(text)
 	file.close()
 
-def create_file(text, file_path):
+def create_file_utf8(text, file_path = 'text_files/result.txt'):
 	with open(file_path, "w+", encoding="utf-8") as file:
 		file.write(text)
 		file.close()

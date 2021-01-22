@@ -1,5 +1,5 @@
 from PlayStoreScraper import get_app_details
-from Helper import reformat_text, create_file
+from Helper import reformat_text, create_file_utf8
 from KeywordDensityChecker import keydensity
 
 app_ids = [
@@ -17,38 +17,48 @@ app_ids = [
     "com.red.ball.ballgames.bounceball.redball5", #Bounce Ball 5 - Jump Ball Hero Adventure
 ]
 
-#SCRIPT PARAMETERS
-app_id = app_ids[11]
-cap_results_to = 100
 
-#GET THE APP DATA
-app_details = get_app_details(app_id)
-title = app_details["title"]
-category = app_details["category"]
-description = app_details["description"]
+def calculate_keyword_density(text, max_results):
+    text_formatted = reformat_text(text)
+    
+    one_word_result = keydensity(text_formatted, 1)
+    two_word_result = keydensity(text_formatted, 2)
+    three_word_result = keydensity(text_formatted, 3)
 
-print(description)
+    result = "\n\nOne word results\n"
+    for res in one_word_result[:max_results]:
+        result += "\n" + res
+    result += "\n\nTwo words results\n"
+    for res in two_word_result[:max_results]:
+        result += "\n" + res
+    result += "\n\nThree words results\n"
+    for res in three_word_result[:max_results]:
+        result += "\n" + res
+    return result
 
-#CALCULATE THE KEYWORD DENSITY
-#description = description.replace('\xf0\x9f\x94\xb', '')
-description_formatted = reformat_text(description)
-print("\n\n\n" + description_formatted)
 
-one_word_result = keydensity(description_formatted, 1)
-two_word_result = keydensity(description_formatted, 2)
-three_word_result = keydensity(description_formatted, 3)
+def analyze_app(app_id, max_results = 100):
+    app_details = get_app_details(app_id)
+    
+    result = "Title ---> " + app_details["title"]
+    result += "\n\nDescription ---> " + app_details["description"]
+    result += calculate_keyword_density(app_details["description"], max_results)
+    
+    create_file_utf8(result, "text_files/" + app_id.replace(".", "_") + ".txt")
 
-#MERGE RESULTS IN ONE SINGLE STRING
-result = "Results for app ---> " + app_id
-result += "\n\nOne word results\n"
-for res in one_word_result[:cap_results_to]:
-    result += "\n" + res
-result += "\n\nTwo words results\n"
-for res in two_word_result[:cap_results_to]:
-    result += "\n" + res
-result += "\n\nThree words results\n"
-for res in three_word_result[:cap_results_to]:
-    result += "\n" + res
 
-#SAVE RESULT INTO FILE
-create_file(result, "text_files/" + app_id.replace(".", "_") + ".txt")
+def analyze_apps(app_ids):
+    for app_id in app_ids:
+        analyze_app(app_id)
+
+
+def analyze_all_in_one_go(app_ids):
+    all_text = ""
+    for app_id in app_ids:
+        app_details = get_app_details(app_id)
+        all_text += app_details["title"] + " " + app_details["description"]
+    result = calculate_keyword_density(all_text, 100)
+    create_file_utf8(result)
+
+
+analyze_all_in_one_go(app_ids)
