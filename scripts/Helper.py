@@ -34,3 +34,12 @@ def reformat_text(text):
 	clean = re.sub('[.,!?;:()*&^%$#@_+\~"]', '', transformed) # Replace all the signs with empty string
 	reformat = ' '.join(clean.split()) # Get rid of the line breaks
 	return reformat #Return the text formatted
+
+def de_emojify_text(text):
+    regrex_pattern = re.compile(pattern = "["
+        u"\U0001F600-\U0001F64F"  # emoticons
+        u"\U0001F300-\U0001F5FF"  # symbols & pictographs
+        u"\U0001F680-\U0001F6FF"  # transport & map symbols
+        u"\U0001F1E0-\U0001F1FF"  # flags (iOS)
+							"]+", flags = re.UNICODE)
+    return regrex_pattern.sub(r'', text)

@@ -1,9 +1,9 @@
 #Allows us to retrieve the app data from the googple play store
 from PlayStoreScraper import get_app_details
-#Helper functions to process text and create files
-from Helper import reformat_text, create_file_utf8, create_csv
 #Function to analyze the key density of a given text
 from KeywordDensityChecker import keydensity
+#Helper functions to process text and create files
+import Helper
 
 
 #List of application ID's we want to analyze
@@ -52,13 +52,13 @@ def analyze_app(app_id):
     text_result = create_result_text(title, description, one_word_result, two_word_result, three_word_result)
     csv_result = zip(one_word_result, two_word_result, three_word_result)
 
-    create_file_utf8(text_result, "out/text/" + reformat_text(title) + ".txt")
-    create_csv(csv_result, 'out/csv/' + reformat_text(title) + ".csv")
+    Helper.create_file_utf8(text_result, "out/text/" + Helper.reformat_text(title) + ".txt")
+    #Helper.create_csv(csv_result, 'out/csv/' + Helper.reformat_text(title) + ".csv")
 
 
 #Calculates the keyword density of a given text
 def calculate_keyword_density(text, words_to_ignore):
-    text_formatted = reformat_text(text)
+    text_formatted = Helper.reformat_text(text)
     
     one_word_result = keydensity(text_formatted, 1, words_to_ignore)
     two_word_result = keydensity(text_formatted, 2, words_to_ignore)
