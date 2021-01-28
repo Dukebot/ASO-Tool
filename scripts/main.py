@@ -1,9 +1,6 @@
-#Allows us to retrieve the app data from the googple play store
-from PlayStoreScraper import get_app_details
-#Function to analyze the key density of a given text
-from KeywordDensityChecker import keydensity
-#Helper functions to process text and create files
+import PlayStoreScraper
 import Helper
+from KeywordDensityChecker import keydensity
 
 
 #List of application ID's we want to analyze
@@ -24,27 +21,27 @@ app_ids = [
 
 
 #Words that we will filter as we are not interested in them
-words_to_ignore = ["de", "en", "y", "el", "la", "no" , "a", "para", "tu", "que", "pero", "más", "esta", "es", "un", "una", "mã¡s","the", "in", "to", "of", "and", "than", "o", "more", "mas", "los", "del", "con", "you", "your", "is", "while", "for", "with", "you're", "yourself", "but", "will", "on", "-", "by", "at", "an", "all", "who", "if", "not", "his", "himself", "he", "as", "let's", "it's", "we", "are", "it", "can", "can't", "be", "this", "it"]
-words_to_ignore = []
-
-
-def main():
-    analyze_apps()
+words_to_ignore = ["de", "en", "y", "el", "la", "no" , "a", "para", "tu", "que", "pero", "más", "esta", "es", "un", "una", "mã¡s","the", "in", "to", "of", "and", "than", "o", "more", "mas", "los", "del", "con", "you", "your", "is", "while", "for", "with", "you're", "yourself", "but", "will", "on", "-", "by", "at", "an", "all", "who", "if", "not", "his", "himself", "he", "as", "let's", "it's", "we", "are", "it", "can", "can't", "be", "this", "it", "when", "only", "its", "how", "also", "us", "those", "cannot"]
 
 
 #Analyzes and array of apps ids and creates a single file per app
+def main():
+    analyze_apps()
+    
+
 def analyze_apps():
-    for app_id in app_ids:
+    for app_id in app_ids: 
         analyze_app(app_id)
 
 
 #Analyzes the keyword density of a given app id (package name)
 def analyze_app(app_id):
-    app_details = get_app_details(app_id)
+    app_details = PlayStoreScraper.get_app_details(app_id)
     title = app_details["title"]
     description = app_details["description"]
     
     all_word_results = calculate_keyword_density(title + " " + description, words_to_ignore)
+
     one_word_result = all_word_results[0]
     two_word_result = all_word_results[1]
     three_word_result = all_word_results[2]
@@ -84,6 +81,18 @@ def create_result_text(app_title, app_description, one_word_result, two_word_res
         result += "\n" + res
     
     return result
+
+
+def analyze_trap_ball_description():
+    text = Helper.read_text_from_file("files/trap ball long description.txt")
+    all_word_results = calculate_keyword_density(text, words_to_ignore)
+    
+    one_word_result = all_word_results[0]
+    two_word_result = all_word_results[1]
+    three_word_result = all_word_results[2]
+
+    result = create_result_text("Trap Ball", text, one_word_result, two_word_result, three_word_result)
+    print(result)
 
 
 main()
